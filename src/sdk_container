@@ -13,6 +13,12 @@ function run_in_sniper() {
             exit 1
         fi
 
+	# Makes sure the .ccache folder exists, otherwise this
+	# script will fail a little later.
+	if [[ ! -d $HOME/.ccache ]]; then
+		mkdir $HOME/.ccache
+	fi
+
         # Let's say we run as /home/misyl/my_mod/src/myscript
         # We want to mount /home/misyl/my_mod, and then launch
         # src/myscript inside of that.
