@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -13,12 +13,6 @@ function run_in_sniper() {
             exit 1
         fi
 
-	# Makes sure the .ccache folder exists, otherwise this
-	# script will fail a little later.
-	if [[ ! -d $HOME/.ccache ]]; then
-		mkdir $HOME/.ccache
-	fi
-
         # Let's say we run as /home/misyl/my_mod/src/myscript
         # We want to mount /home/misyl/my_mod, and then launch
         # src/myscript inside of that.
@@ -27,6 +21,8 @@ function run_in_sniper() {
         mod_src_dir=$(pwd)
         mod_src_dir_name=$(basename -- "$mod_src_dir")
         mod_base_dir=$(dirname -- "$mod_src_dir")
+
+	mkdir -p "${CCACHE_DIR:-$HOME/.ccache}"
 
         image="registry.gitlab.steamos.cloud/steamrt/sniper/sdk:latest"
         echo "Running script inside $image"

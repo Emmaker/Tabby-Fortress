@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 OBJCOPY=$STEAM_RUNTIME_PATH/bin/objcopy
 
