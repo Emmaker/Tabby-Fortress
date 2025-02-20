@@ -138,6 +138,16 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# Files generated during build on Linux
+game/mod_*
+src/lib/public/linux64/mathlib.a
+src/lib/public/linux64/raytrace.a
+src/lib/public/linux64/tier1.a
+src/lib/public/linux64/vgui_controls.a
+src/compile_commands.json
+src/.ninja_deps
+src/.ninja_log
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
